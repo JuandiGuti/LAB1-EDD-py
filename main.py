@@ -3,8 +3,6 @@ from arbol import ArbolBinario
 import json
 import csv
 
-os.system("cls")
-
 jsonArbol = ArbolBinario()
 
 menu = ""
@@ -38,7 +36,6 @@ while(menu != None):
                     jsonArbol.eliminar(jsonPersona)
                 else:
                     print("No es una instruccion valida")
-        os.system("cls")
         print("Se cargo el archivo correctamente")
     elif(menu == "2"):
         print("Buscar por nombre")
