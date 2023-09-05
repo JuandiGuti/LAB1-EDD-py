@@ -1,4 +1,3 @@
-import os
 from modelos.persona import Person
 from arbol import ArbolBinario
 import json
@@ -20,7 +19,7 @@ while(menu != None):
 
     if(menu == "1"):
         print("Cargando archivo...")
-        with open('input.csv') as archivo:
+        with open('input - Copy.csv') as archivo:
             reader = csv.reader(archivo, delimiter=";")
             for fila in reader:
                 jsonPersona = Person.from_json(str(fila[1]))
@@ -54,7 +53,7 @@ while(menu != None):
             print("Direccion:" + lista[i].address)
             print('\n')
             i += 1
-        print("Se encontraron:" + str(i+1) +" resultados.")
+        print("Se encontraron:" + str(i) +" resultados.")
     elif(menu == "3"):
         print("Buscar por dpi")
 
