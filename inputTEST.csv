@@ -1,0 +1,6 @@
+"INSERT;{""name"":""eric""","dpi:""3826294264857""","datebirth:""1976-10-23T22:41:25.836Z""","address:""san antonio""}"
+"INSERT;{""name"":""geoffrey""","dpi:""1594491145700""","datebirth:""1990-07-05T20:29:55.944Z""","address:""bakersfield""}"
+"INSERT;{""name"":""darwin""","dpi:""2516215294611""","datebirth:""2002-07-13T13:35:53.632Z""","address:""johnson city""}"
+"PATCH;{""name"":""eric""","dpi:""3826294264857""","datebirth:""CAMBIO""","address:""CAMBIO""}"
+"PATCH;{""name"":""darwin""","dpi:""2516215294611""","datebirth:""CAMBIO""","address:""CAMBIO""}"
+"DELETE;{""name"":""geoffrey""","dpi:""1594491145700""","datebirth:""1990-07-05T20:29:55.944Z""","address:""bakersfield""}"

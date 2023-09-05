@@ -67,6 +67,21 @@ class ArbolBinario:
 
         return nodo_actual
 
+    def buscar_por_nombre(self, name):
+        resultados = []
+        self._buscar_por_nombre_recursivo(self.raiz, name, resultados)
+        return resultados
+
+    def _buscar_por_nombre_recursivo(self, nodo_actual, name, resultados):
+        if nodo_actual:
+            self._buscar_por_nombre_recursivo(nodo_actual.izquierda, name, resultados)
+            
+            if nodo_actual.valor.name == name:
+                resultados.append(nodo_actual.valor)
+            
+            self._buscar_por_nombre_recursivo(nodo_actual.derecha, name, resultados)
+
+
     def min_value_node(self, nodo):
         current = nodo
         while(current.izquierda is not None):

@@ -1,32 +1,16 @@
+import os
 from modelos.persona import Person
 from arbol import ArbolBinario
 import json
 import csv
 
+os.system("cls")
+
 jsonArbol = ArbolBinario()
 
-def insertar(jsonPersona):
-    jsonArbol.insertar(jsonPersona)
+menu = ""
 
-def patch(jsonPersona):
-    if ((jsonArbol.buscar(jsonPersona))!= None):
-        jsonPersonaPatch = jsonArbol.buscar(jsonPersona)
-        jsonPersonaPatch.datebirth = jsonPersona.datebirth
-        jsonPersonaPatch.address = jsonPersona.address
-        eliminar(jsonPersona)
-        insertar(jsonPersonaPatch)
-    else:
-        print("No se encontro a la persona")
-
-def eliminar(jsonPersona):
-    if ((jsonArbol.buscar(jsonPersona))!= None):
-        eliminar(jsonPersona)
-    else:
-        print("No se encontro a la persona")
-
-menu = None
-
-while(menu == None):
+while(menu != None):
     print("1. Cargar archivo")
     print("2. Buscar por nombre")
     print("3. Buscar por dpi")
@@ -41,19 +25,41 @@ while(menu == None):
             for fila in reader:
                 jsonPersona = Person.from_json(str(fila[1]))
                 if fila[0] == "INSERT":
-                    insertar(jsonPersona)
+                    jsonArbol.insertar(jsonPersona)
                 elif fila[0] == "PATCH":
-                    patch(jsonPersona)
+                    if ((jsonArbol.buscar(jsonPersona))!= None):
+                        jsonPersonaPatch = jsonArbol.buscar(jsonPersona)
+                        jsonPersonaPatch.datebirth = jsonPersona.datebirth
+                        jsonPersonaPatch.address = jsonPersona.address
+                        jsonArbol.eliminar(jsonPersona)
+                        jsonArbol.insertar(jsonPersonaPatch)
+                    else:
+                        print("No se encontro a la persona")
                 elif fila[0] == "DELETE":
-                    eliminar(jsonPersona)
+                    jsonArbol.eliminar(jsonPersona)
                 else:
                     print("No es una instruccion valida")
+        os.system("cls")
         print("Se cargo el archivo correctamente")
     elif(menu == "2"):
-        print("")
+        print("Buscar por nombre")
+        print("Coloque el nombre de las personas que quiere buscar:")
+        nombre = input()
+        lista = jsonArbol.buscar_por_nombre(nombre)
+        i =0
+        while i < len(lista):
+            print("Nombre:" + lista[i].name)
+            print("Dpi:" + lista[i].dpi)
+            print("Fecha de nacimiento:" + lista[i].datebirth)
+            print("Direccion:" + lista[i].address)
+            print('\n')
+            i += 1
+        print("Se encontraron:" + str(i+1) +" resultados.")
     elif(menu == "3"):
-        print("")
+        print("Buscar por dpi")
+
     elif(menu == "4"):
-        print("")
+        print("Eliminar por dpi")
+
     elif(menu == "5"):
         menu = None
