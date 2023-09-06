@@ -79,6 +79,20 @@ class ArbolBinario:
             
             self._buscar_por_nombre_recursivo(nodo_actual.derecha, name, resultados)
 
+    def buscar_por_dpi(self, dpi):
+        resultados = []
+        self._buscar_por_dpi_recursivo(self.raiz, dpi, resultados)
+        return resultados
+
+    def _buscar_por_dpi_recursivo(self, nodo_actual, dpi, resultados):
+        if nodo_actual:
+            self._buscar_por_dpi_recursivo(nodo_actual.izquierda, dpi, resultados)
+            
+            if nodo_actual.valor.dpi == dpi:
+                resultados.append(nodo_actual.valor)
+            
+            self._buscar_por_dpi_recursivo(nodo_actual.derecha, dpi, resultados)
+
 
     def min_value_node(self, nodo):
         current = nodo
