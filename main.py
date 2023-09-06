@@ -20,7 +20,7 @@ while(menu != None):
 
     if(menu == "1"):
         print("Cargando archivo...")
-        with open('input.csv') as archivo:
+        with open('inputNuevo.csv') as archivo:
             reader = csv.reader(archivo, delimiter=";")
             for fila in reader:
                 jsonPersona = Person.from_json(str(fila[1]))
@@ -44,7 +44,7 @@ while(menu != None):
         print("Buscar por nombre")
         print("Coloque el nombre de las personas que quiere buscar:")
         nombre = input()
-        lista = jsonArbol.buscar_por_nombre(nombre)
+        lista = jsonArbol.buscar_por_nombre(nombre.lower())
         i =0
         while i < len(lista):
             print("Nombre:" + lista[i].name)
@@ -72,7 +72,7 @@ while(menu != None):
         print("Eliminar por Nombre")
         print("Coloque el nombre de las personas que quiere eliminar:")
         nombre = input()
-        lista = jsonArbol.buscar_por_nombre(nombre)
+        lista = jsonArbol.buscar_por_nombre(nombre.lower())
         i =0
         while i < len(lista):
             jsonArbol.eliminar(lista[i])
@@ -93,7 +93,7 @@ while(menu != None):
         print("Actualizar por nombre")
         print("Coloque el nombre de las personas que quiere actualizar:")
         nombre = input()
-        lista = jsonArbol.buscar_por_nombre(nombre)
+        lista = jsonArbol.buscar_por_nombre(nombre.lower())
         print("Coloque la Fecha de nacimiento (en caso de no querer cambiar dar ENTER):")
         fecha = input()
         print("Coloque la direccion (en caso de no querer cambiar dar ENTER):")
