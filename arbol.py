@@ -1,6 +1,4 @@
 from asyncio.windows_events import NULL
-
-
 class Nodo:
     def __init__(self, valor):
         self.valor = valor
