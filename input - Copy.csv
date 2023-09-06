@@ -4,3 +4,4 @@ INSERT;{"name":"darwin","dpi":"2516215294611","datebirth":"2002-07-13T13:35:53.6
 INSERT;{"name":"darwin","dpi":"9034215673411","datebirth":"2023-07-13T13:35:53.632Z","address":"texas"}
 INSERT;{"name":"dorthy","dpi":"8985148201945","datebirth":"1970-11-06T13:18:46.814Z","address":"methuen town"}
 PATCH;{"name":"darwin","dpi":"2516215294611","datebirth":"CAMBIO","address":"CAMBIO"}
+DELETE;{"name":"dorthy","dpi":"8985148201945","datebirth":"1970-11-06T13:18:46.814Z","address":"methuen town"}

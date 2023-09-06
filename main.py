@@ -9,12 +9,12 @@ menu = ""
 
 while(menu != None):
     print("1. Cargar archivo")
-    print("2. Buscar por nombre")
-    print("3. Buscar por dpi")
-    print("4. Eliminar por Nombre")
-    print("5. Eliminar por dpi")
-    print("6. Actualizar por Nombre")
-    print("7. Actualizar por dpi")
+    print("2. Buscar por nombre (rango)")
+    print("3. Buscar por dpi (individual)")
+    print("4. Eliminar por Nombre (rango)")
+    print("5. Eliminar por dpi (individual)")
+    print("6. Actualizar por Nombre (rango)")
+    print("7. Actualizar por dpi (individual)")
     print("8. Salir")
     menu = input()
 
